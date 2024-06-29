@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Input Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>{{ title }}</h1>
+        </header>
+
+        <section>
+            <h2>{{ subtitle }}</h2>
+            <p>Inputkan sebuah data</p>
+            <input type="text" v-model="inputText" @input="updateText" placeholder="Ketik sesuatu...">
+        </section>
+
+        <section>
+            <h2>Inputan yang diterima</h2>
+            <p :class="{'highlight': isHighlighted}" :style="styleObject">{{ dynamicText }}</p>
+            <button @click="toggleHighlight">Toggle Highlight</button>
+        </section>
+
+        <footer>
+            <p>&copy; Data Input</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="script.js"></script>
+</body>
+</html>
